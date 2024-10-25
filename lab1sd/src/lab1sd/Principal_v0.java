@@ -3,7 +3,8 @@ package lab1sd;
 
 /**
  *
- * @author Usuário
+ * @Rodrigo Oliveira Badega 2207273
+ * @Guilherme Henrique Soeiro Fontes 2320657
  */
 import java.io.*;
 import java.nio.file.*;
@@ -92,11 +93,11 @@ public class Principal_v0 {
 				throws FileNotFoundException {
                     
                     //SEU CODIGO AQUI
-                    Random gerador = new Random();
-                    int valorAleatorio = gerador.nextInt(NUM_FORTUNES);
-                    System.out.println(valorAleatorio);
+                    Random gerador = new Random();//inicializa o gerador de num aleatorios
+                    int valorAleatorio = gerador.nextInt(NUM_FORTUNES);//gera um num aleatorio de 0 a NUM_FORTUNES
+                    System.out.println(valorAleatorio);//print o valor gerado
 //                    System.out.println("Aqui começa o teste");
-                    System.out.println(hm.get(valorAleatorio));
+                    System.out.println(hm.get(valorAleatorio));//printa a fortuna referente a posicao gerada
                     
 		}
 
@@ -104,11 +105,11 @@ public class Principal_v0 {
 				throws FileNotFoundException {
 
                     //SEU CODIGO AQUI
-                    String fortuna = "\nFortuna Inserida!\n%";
-                    byte data[] = fortuna.getBytes();
+                    String fortuna = "\nFortuna Inserida!\n%";//texto a ser inserido
+                    byte data[] = fortuna.getBytes();//retorna qtde de bytes da String fortuna
                     try (OutputStream out = new BufferedOutputStream(
                     Files.newOutputStream(path, CREATE, APPEND))){
-                        out.write(data,0,data.length);
+                        out.write(data,0,data.length);//escreve no fim do arquivo
                     }catch (IOException x){
                         System.err.println(x);
                     }
